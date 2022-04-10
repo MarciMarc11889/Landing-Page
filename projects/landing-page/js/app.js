@@ -22,8 +22,8 @@
  * Define Global Variables
  * 
 */
-
-
+const   sections    = document.querySelectorAll("section"),
+        navBar = document.getElementById("navbar__list");
 /**
  * End Global Variables
  * Start Helper Functions
@@ -39,7 +39,12 @@
 */
 
 // build the nav
-
+for (const section of sections) {
+    const newLi=document.createElement("li");
+    let newContent = document.querySelector("h2").innerText;
+    newLi.append(newContent);
+    navBar.appendChild(newLi);
+}
 
 // Add class 'active' to section when near top of viewport
 
