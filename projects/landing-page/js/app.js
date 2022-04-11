@@ -23,7 +23,9 @@
  * 
 */
 const   sections    = document.querySelectorAll("section"),
-        navBar = document.getElementById("navbar__list");
+        navBar      = document.getElementById("navbar__list"),
+        navBarTxt   = document.querySelectorAll("h2");
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -39,9 +41,9 @@ const   sections    = document.querySelectorAll("section"),
 */
 
 // build the nav
-for (const section of sections) {
+for (let i=0; i <= sections.length-1; i++) {
     const newLi=document.createElement("li");
-    let newContent = document.querySelector("h2").innerText;
+    let newContent = navBarTxt.item(i).innerHTML;
     newLi.append(newContent);
     navBar.appendChild(newLi);
 }
