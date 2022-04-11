@@ -23,8 +23,7 @@
  * 
 */
 const   sections    = document.querySelectorAll("section"),
-        navBar      = document.getElementById("navbar__list"),
-        navBarTxt   = document.querySelectorAll("h2");
+        navBar      = document.getElementById("navbar__list");
 
 /**
  * End Global Variables
@@ -43,13 +42,13 @@ const   sections    = document.querySelectorAll("section"),
 // build the nav
 for (let i=0; i <= sections.length-1; i++) {
     const newLi=document.createElement("li");
-    let newContent = navBarTxt.item(i).innerHTML;
+    newLi.classList.add("navbar__menu", "menu__link");
+    let newContent = sections.item(i).dataset.nav;
     newLi.append(newContent);
     navBar.appendChild(newLi);
 }
 
 // Add class 'active' to section when near top of viewport
-
 
 // Scroll to anchor ID using scrollTO event
 
