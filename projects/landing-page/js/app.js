@@ -31,7 +31,18 @@ const   sections    = document.querySelectorAll("section"),
  * 
 */
 
-
+window.addEventListener("scroll", () =>{
+    for (let i=0; i <= sections.length-1; i++){
+        let posSect=sections[i].getBoundingClientRect();
+        
+        if (posSect.top <= 300 && posSect.bottom >= 300 ){
+            sections[i].classList.add("your-active-class");
+        }
+        else {
+            sections[i].classList.remove("your-active-class");
+        }
+    }
+})
 
 /**
  * End Helper Functions
