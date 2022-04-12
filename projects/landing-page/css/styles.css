@@ -95,6 +95,12 @@ section {
     top: 0;
     width: 100%;
     z-index: 5;
+    opacity: 10%;
+    transition: ease 2s;
+}
+
+.page__header:hover {
+    opacity: 1;
 }
 
 /* Footer Styles */
