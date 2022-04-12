@@ -63,11 +63,17 @@ window.addEventListener("scroll", () =>{
 // Scroll to anchor ID using scrollTO event
 
 navBar.addEventListener("click", (e) =>{
+    const listItems = document.getElementById("menu__link");
+
     for (let i=0; i <= sections.length-1; i++) {
         if (sections.item(i).dataset.nav === e.target.textContent){
+            listItems(i).classList.add("active");
             sections.item(i).scrollIntoView({
                 block: "start", behavior: "smooth"
             });
+        }
+        else {
+            listItems(i).classList.remove("active");
         }
     }
 })
