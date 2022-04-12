@@ -49,31 +49,29 @@ for (let i=0; i <= sections.length-1; i++) {
 
 // Add class 'active' to section when near top of viewport
 window.addEventListener("scroll", () =>{
+    const listItems = document.getElementsByClassName("menu__link");
+
     for (let i=0; i <= sections.length-1; i++){
         let posSect=sections[i].getBoundingClientRect();
         
         if (posSect.top <= 300 && posSect.bottom >= 300 ){
             sections[i].classList.add("your-active-class");
+            listItems[i].classList.add("your-active-class");
         }
         else {
             sections[i].classList.remove("your-active-class");
+            listItems[i].classList.remove("your-active-class");
         }
     }
 })
 // Scroll to anchor ID using scrollTO event
 
 navBar.addEventListener("click", (e) =>{
-    const listItems = document.getElementById("menu__link");
-
     for (let i=0; i <= sections.length-1; i++) {
         if (sections.item(i).dataset.nav === e.target.textContent){
-            listItems(i).classList.add("active");
             sections.item(i).scrollIntoView({
                 block: "start", behavior: "smooth"
             });
-        }
-        else {
-            listItems(i).classList.remove("active");
         }
     }
 })
