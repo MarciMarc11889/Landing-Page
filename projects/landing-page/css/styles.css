@@ -82,7 +82,7 @@ section {
     color: #000;
 }
 
-.navbar__menu .active {
+.navbar__menu .your-active-class {
     background: #333;
     color: #fff;
 }
