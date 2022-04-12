@@ -41,7 +41,7 @@ const   sections    = document.querySelectorAll("section"),
 // build the nav
 for (let i=0; i <= sections.length-1; i++) {
     const newLi=document.createElement("li");
-    newLi.classList.add("navbar__menu", "menu__link");
+    newLi.classList.add("menu__link");
     let newContent = sections.item(i).dataset.nav;
     newLi.append(newContent);
     navBar.appendChild(newLi);
@@ -62,6 +62,14 @@ window.addEventListener("scroll", () =>{
 })
 // Scroll to anchor ID using scrollTO event
 
+navBar.addEventListener("click", (e) =>{
+    for (let i=0; i <= sections.length-1; i++) {
+        if (sections.item(i).dataset.nav === e.target.textContent){
+            sections.item(i).scrollIntoView();
+        }
+    }
+
+})
 
 /**
  * End Main Functions
