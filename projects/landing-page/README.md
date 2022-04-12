@@ -3,6 +3,9 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
+* [Project description]
+* [Usage]
+* [Dependencies]
 
 ## Instructions
 
