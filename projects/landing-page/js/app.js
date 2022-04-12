@@ -1,6 +1,5 @@
 
 // Define Global Variables
-
 const   sections    = document.querySelectorAll("section"),
         navBar      = document.getElementById("navbar__list");
 
@@ -13,9 +12,11 @@ for (let i=0; i <= sections.length-1; i++) {
     navBar.appendChild(newLi);
 }
 
+// List items in the Navbar in the following variable
+const listItems = document.getElementsByClassName("menu__link");
+
 // Add class 'active' to section when near top of viewport
 window.addEventListener("scroll", () =>{
-    const listItems = document.getElementsByClassName("menu__link");
 
     for (let i=0; i <= sections.length-1; i++){
         let posSect=sections[i].getBoundingClientRect();
@@ -30,10 +31,12 @@ window.addEventListener("scroll", () =>{
         }
     }
 })
-// Scroll to anchor ID using scrollTO event
 
+// Scroll to anchor ID using scrollTO event
 navBar.addEventListener("click", (e) =>{
+
     for (let i=0; i <= sections.length-1; i++) {
+
         if (sections.item(i).dataset.nav === e.target.textContent){
             sections.item(i).scrollIntoView({
                 block: "start", behavior: "smooth"
