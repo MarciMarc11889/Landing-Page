@@ -65,7 +65,7 @@ window.addEventListener("scroll", () =>{
 navBar.addEventListener("click", (e) =>{
     for (let i=0; i <= sections.length-1; i++) {
         if (sections.item(i).dataset.nav === e.target.textContent){
-            sections.item(i).scrollIntoView(false);
+            sections.item(i).scrollIntoView({block: "end", behavior: "smooth"});
         }
     }
 
